@@ -1,0 +1,17 @@
+/* topograph is the way that text is arranged and represented.*/
+body {
+    padding: 10%;
+    font-size: 2rem;
+    background-color: aqua;
+    border: 20px solid black;
+}
+
+input {
+    font: inherit;
+}
+
+p{
+    text-decoration:dashed underline;
+    text-indent: 2em;
+    font-weight: 900;
+}
