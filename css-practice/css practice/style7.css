@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+ol{
+    text-align: center;
+    list-style-type:lower-alpha;
+    list-style-type:none;
+    list-style-position:inside;
+
+}
+ul,h1 {
+    text-align: center;
+    list-style-position:inside;
+    list-style-image: url('../html-practice/bs.jpg');
+    list-style:square url('../html-practice/bs.jpg') inside;
+}
+
+ul li:nth-child(2n){
+    color: red;
+}
+
+::marker{
+    color: red;
+    font-size: 20px;
+    content:" implies>> ";
+    text-align: center;
+}
