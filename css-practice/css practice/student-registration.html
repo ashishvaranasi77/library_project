@@ -6,84 +6,167 @@
 </head>
 
 <body>
-    <h1 align="center">Student Registration Form</h1>
 
-<table>
+<nav>
+    <a href="student-registration.html">Student Registration</a>
+    <a href="book-registration.html">Book Registration</a>
+    <a href="author-registration.html">Author Registration</a>
+</nav>
+
+    <script>
+       function mobileChanged()
+        {
+            var mobile = document.getElementById("mobile_num").value;
+
+            if(mobile.length == 10 && !isNaN(mobile))
+            {
+                document.getElementById("mobile_num").style.border = "2px solid green ";
+            }
+            else
+            {
+                document.getElementById("mobile_num").style.border = "2px solid red";
+            }
+        }
+        function changeText()
+        {
+            document.getElementById("my_div").innerHTML = "<h1 align='center'>Welcome</h1>";
+        }
+        function validateForm()
+         {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var age = document.getElementById("age").value;
+            var mobile = document.getElementById("mobile_num").value;
+
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            if (password == "") {
+                alert("Password must be filled out");
+                return false;
+            }
+            if (age == "" || age < 18) {
+                alert("Age must be at least 18");
+                return false;
+            }
+            if (password.length < 6 || password.length > 20) {
+                alert("password must be at least 6 characters long");
+                return false;
+            }
+            if(mobile == "")
+            {
+                alert("mobile number is required");
+                return false;
+            }
+            else if(mobile.length != 10)
+            {
+                alert("mbile number must be 10 digits");
+                return false;
+            }
+            else if(isNaN(mobile))
+            {
+                alert("Only numbers are allowed");
+                return false;
+            }
+        }
+    </script>
+
+    <div id="my_div">
+        <h1 align="center">Student Registration Form</h1>
+    </div>
 
 
-<tr>
-<th colspan="2">Enter Information    <img src="images.png" alt="Image" width="30"></th>
-</tr>
+    <table>
+    <form action="/register" method="post" onsubmit="return validateForm()">
 
-<tr>
-<td>Full Name:</td>
-<td><input type="text" placeholder="enter full name"></td>
-</tr>
+    <tr>
+        <th colspan="2" class="heading"><h4>Enter Information
+        <img src="images.png" alt="Image" width="30"></h4></th>
+    </tr>
 
-<tr>
-<td>Mobile Number:</td>
-<td><input type="number" placeholder="enter mobile number"></td>
-</tr>
+    <tr>
+        <td>Full Name:</td>
+        <td><input type="text" id="name" placeholder="enter full name"></td>
+    </tr>
 
-<tr>
-<td>Email:</td>
-<td><input type="email" placeholder="enter your email"></td>
-</tr>
+    <tr>
+        <td>
+        <div id="mobilenum_label">
+            Mobile Number:
+        </div>
+        </td>
+        <td>
+            <input id="mobile_num" oninput="mobileChanged()" type="text" placeholder="enter mobile number">
+        </td>
+    </tr>
 
-<tr>
-<td>Password:</td>
-<td><input type="password" placeholder="enter password"></td>
-</tr>
+    <tr>
+    <td>Email id:</td>
+    <td><input type="email" id="email" placeholder="enter your email"></td>
+    </tr>
 
-<tr>
-<td>Age:</td>
-<td><input type="number" placeholder="enter age"></td>
-</tr>
+    <tr>
+    <td>Password:</td>
+    <td><input type="password" id="password" placeholder="enter password"></td>
+    </tr>
 
-<tr>
-<td>Gender:</td>
-<td>
-<input type="radio" name="gender">Male
-<input type="radio" name="gender">Female
-</td>
-</tr>
+    <tr>
+    <td>Age:</td>
+    <td><input type="number" id="age" placeholder="enter age"></td>
+    </tr>
 
-<tr>
-<td>Course:</td>
-<td>
-<select>
-<option>CSE</option>
-<option>ECE</option>
-<option>EEE</option>
-<option>MECH</option>
-</select>
-</td>
-</tr>
+    <tr>
+    <td>Gender:</td>
+    <td>
+    <input type="radio" name="gender">Male
+    <input type="radio" name="gender">Female
+    </td>
+    </tr>
 
-<tr>
-<td>Hobbies:</td>
-<td>
-<input type="checkbox">Coding
-<input type="checkbox">Gaming
-<input type="checkbox">Sports
-</td>
-</tr>
+    <tr>
+    <td>Course:</td>
+    <td>
+    <select>
+    <option>CSE</option>
+    <option>ECE</option>
+    <option>EEE</option>
+    <option>MECH</option>
+    </select>
+    </td>
+    </tr>
 
-<tr>
-<td>Address:</td>
-<td>
-<textarea rows="4" cols="30" placeholder="enter address"></textarea>
-</td>
-</tr>
+    <tr>
+    <td>Hobbies:</td>
+    <td>
+    <input type="checkbox">Coding
+    <input type="checkbox">Gaming
+    <input type="checkbox">Sports
+    </td>
+    </tr>
 
-<tr>
-<td colspan="2" align="center">
-<button>Register</button>
-<button>Reset</button>
-</td>
-</tr>
+    <tr>
+    <td>Address:</td>
+    <td>
+    <textarea rows="4" cols="30" placeholder="enter address"></textarea>
+    </td>
+    </tr>
 
-</table>
+    <tr>
+    <td colspan="2" align="center">
+    <button type="submit">Register</button>
+    <button type="reset">Reset</button>
+    <button onclick="changeText()">Change Text</button>
+    </td>
+    </tr>
+
+    </form>
+    </table>
 
 </body>
 </html>

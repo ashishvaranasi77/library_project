@@ -5,7 +5,8 @@
 }
 
 body {
-    margin: 0.5rem;
+    margin:auto;
+    margin-top: 6rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
 }
@@ -20,7 +21,6 @@ nav {
 }
 
 h2{
-    padding: 1rem;
     background-color: goldenrod;
     border-radius: 2rem 2rem 0 0;
 }
