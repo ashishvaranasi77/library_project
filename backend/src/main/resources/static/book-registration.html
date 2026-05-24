@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Registration Form</title>
+        <link rel="stylesheet" href="style-registration.css">
+    </head>
+    <body>
+            <nav>
+                <a href="student-registration.html">Student Registration</a>
+                <a href="author-registration.html">Author Registration</a>
+            </nav>
+        <script>
+            function validateBookForm()
+            {
+                var bookid = document.getElementById("bookid").value;
+                var bookname = document.getElementById("bookname").value;
+                var price = document.getElementById("price").value;
+                if(bookid == "")
+                {
+                    alert("Book ID is required");
+                    return false;
+                }
+                if(bookname == "")
+                {
+                    alert("Book Name is required");
+                    return false;
+                }
+                if(price == "" || price <= 0)
+                {
+                    alert("Enter valid book price");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <h1 align="center">Book Registration Form</h1>
+        <table>
+            <form action="/bookregister" method="post" onsubmit="return validateBookForm()">
+                <tr>
+                <th colspan="2">
+                    <h4>Book Information <img src="images.png" alt="Image" width="30"></h4></th>
+                </tr>
+                <tr>
+                    <td>Book ID:</td>
+                    <td>
+                        <input type="text" id="bookid" placeholder="enter book id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Book Name:</td>
+                    <td>
+                        <input type="text" id="bookname" placeholder="enter book name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Book Price:</td>
+                    <td>
+                        <input type="number" id="price" placeholder="enter book price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Author Name:</td>
+                    <td>
+                        <input type="text" id="author" placeholder="enter author name">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Add Book</button>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html>
