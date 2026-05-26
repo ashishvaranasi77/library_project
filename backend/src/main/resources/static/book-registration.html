@@ -35,7 +35,7 @@
         </script>
         <h1 align="center">Book Registration Form</h1>
         <table>
-            <form action="/bookregister" method="post" onsubmit="return validateBookForm()">
+            <form action="/book/Register" method="post" onsubmit="return validateBookForm()">
                 <tr>
                 <th colspan="2">
                     <h4>Book Information <img src="images.png" alt="Image" width="30"></h4></th>
@@ -43,25 +43,25 @@
                 <tr>
                     <td>Book ID:</td>
                     <td>
-                        <input type="text" id="bookid" placeholder="enter book id">
+                        <input type="text" id="bookid" name="bookid" placeholder="enter book id">
                     </td>
                 </tr>
                 <tr>
                     <td>Book Name:</td>
                     <td>
-                        <input type="text" id="bookname" placeholder="enter book name">
+                        <input type="text" id="bookname" name="bookname" placeholder="enter book name">
                     </td>
                 </tr>
                 <tr>
                     <td>Book Price:</td>
                     <td>
-                        <input type="number" id="price" placeholder="enter book price">
+                        <input type="number" id="price" name="price" placeholder="enter book price">
                     </td>
                 </tr>
                 <tr>
                     <td>Author Name:</td>
                     <td>
-                        <input type="text" id="author" placeholder="enter author name">
+                        <input type="text" id="author" name="author" placeholder="enter author name">
                     </td>
                 </tr>
                 <tr>

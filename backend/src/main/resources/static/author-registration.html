@@ -42,7 +42,7 @@
     <h1 align="center">Author Registration Form</h1>
 
     <table>
-        <form action="/authorregister" method="post" onsubmit="return validateAuthorForm()">
+        <form action="/author/register" method="post" onsubmit="return validateAuthorForm()">
 
             <tr>
                 <th colspan="2">
@@ -57,7 +57,7 @@
                 <td>Author ID:</td>
 
                 <td>
-                    <input type="text" id="authorid" placeholder="enter author id">
+                    <input type="text" id="authorid" name="authorid" placeholder="enter author id">
                 </td>
             </tr>
 
@@ -65,7 +65,7 @@
                 <td>Author Name:</td>
 
                 <td>
-                    <input type="text" id="authorname" placeholder="enter author name">
+                    <input type="text" id="authorname" name="authorname" placeholder="enter author name">
                 </td>
             </tr>
 
@@ -73,7 +73,7 @@
                 <td>Address:</td>
 
                 <td>
-                    <textarea id="address" rows="4" cols="30" placeholder="enter address"></textarea>
+                    <textarea id="address" name="address" rows="4" cols="30" placeholder="enter address"></textarea>
                 </td>
             </tr>
 
